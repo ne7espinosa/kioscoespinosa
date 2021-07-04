@@ -7,7 +7,7 @@ function Item({item}) {
             <div className="overflow">
         <CardDeck>
         <Card >
-            <Card.Img variant="top" src={item.pictureUrl} style={{ width: '300px', height: '300px'}}/>
+            <Card.Img fluid src={item.pictureUrl} style={{ width: '300px', height: '300px'}}/>
             <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>
