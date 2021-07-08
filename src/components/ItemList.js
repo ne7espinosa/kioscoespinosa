@@ -2,16 +2,19 @@ import Item from './Item'
 
 
 function ItemList({ productos }) {
-    return (
 
-            <div className="row">
-                {productos.map(i =>
+    return (
+        <div className="row">
+            {
+            productos.map(item => {
+                return(
                     <div className="col-md-4">
-                        <Item className="col-md-4" item={i.producto} />
-                    </div>)}
-            </div>
-   
-    )
+                        <Item key={item.id} item={item} />
+                    </div>
+                    )})}
+        </div>
+
+    );
 }
 
 export default ItemList;

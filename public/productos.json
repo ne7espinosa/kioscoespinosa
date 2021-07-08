@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "description": "Chocolates",
+        "items": [
+            {
+                "id": "1",
+                "title": "Huevo Kinder",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "price": 200,
+                "pictureUrl": "https://i.ibb.co/3fK66vz/Producto1.png"
+            },
+            {
+                "id": "6",
+                "title": "Chocolate Block",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "price": 90,
+                "pictureUrl": "https://i.ibb.co/KzsBWgC/Producto6.jpg"
+            },
+            {
+                "id": "4",
+                "title": "Alfajor Pepito",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "price": 80,
+                "pictureUrl": "https://i.ibb.co/9ZSF7tN/Producto4.jpg"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "description": "Caramelos",
+        "items": [
+            {
+                "id": "3",
+                "title": "Chicle Seven",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "price": 80,
+                "pictureUrl": "https://i.ibb.co/1G9HnVR/Producto3.webp"
+            },
+            {
+                "id": "5",
+                "title": "Gomita Mogul",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "price": 50,
+                "pictureUrl": "https://i.ibb.co/9rHCH6q/Producto5.webp"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "description": "Snack",
+        "items": [
+            {
+                "id": "2",
+                "title": "Doritos",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "price": 150,
+                "pictureUrl": "https://i.ibb.co/LpzG0HT/Producto2.jpg"
+            }
+        ]
+    }
+]
