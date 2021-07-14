@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
-import ItemCount from './ItemCount';
 
 const useParams = require("react-router-dom").useParams;
-const onAdd = (cantidad) => 
-{
-    alert("Se agrego" + Number(cantidad) +" productos a tu compra")
-}
+
 
 function ItemListContainer() {
     const { categoryId } = useParams();
@@ -29,18 +25,21 @@ function ItemListContainer() {
                     if (category) {
                         setProductos([...category.items]);
                     }
+                    else
+                    {
+                        let allProducts = productosResolve.map(({items}) => items).flat().sort((a, b) => a.id - b.id);
+                        setProductos(allProducts);
+                    }
                 })
         }, 2000);
-
+    
 
     }, [categoryId]);
 
     return (
         <div flex="true" className="container justify-content-center align-items-center h-100">
             <ItemList productos={productos} />
-            <div flex="true">
-            <ItemCount initialStock={5} initial={0} onAdd={ onAdd }></ItemCount>
-            </div>
+
         </div>
     )
 

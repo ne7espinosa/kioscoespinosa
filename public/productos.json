@@ -8,21 +8,24 @@
                 "title": "Huevo Kinder",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
                 "price": 200,
-                "pictureUrl": "https://i.ibb.co/3fK66vz/Producto1.png"
+                "pictureUrl": "https://i.ibb.co/3fK66vz/Producto1.png",
+                "stock": 5
             },
             {
                 "id": "6",
                 "title": "Chocolate Block",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
                 "price": 90,
-                "pictureUrl": "https://i.ibb.co/KzsBWgC/Producto6.jpg"
+                "pictureUrl": "https://i.ibb.co/KzsBWgC/Producto6.jpg",
+                "stock": 4
             },
             {
                 "id": "4",
                 "title": "Alfajor Pepito",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
                 "price": 80,
-                "pictureUrl": "https://i.ibb.co/9ZSF7tN/Producto4.jpg"
+                "pictureUrl": "https://i.ibb.co/9ZSF7tN/Producto4.jpg",
+                "stock": 2
             }
         ]
     },
@@ -35,14 +38,16 @@
                 "title": "Chicle Seven",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
                 "price": 80,
-                "pictureUrl": "https://i.ibb.co/1G9HnVR/Producto3.webp"
+                "pictureUrl": "https://i.ibb.co/1G9HnVR/Producto3.webp",
+                "stock": 6
             },
             {
                 "id": "5",
                 "title": "Gomita Mogul",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
                 "price": 50,
-                "pictureUrl": "https://i.ibb.co/9rHCH6q/Producto5.webp"
+                "pictureUrl": "https://i.ibb.co/9rHCH6q/Producto5.webp",
+                "stock": 2
             }
         ]
     },
@@ -55,7 +60,8 @@
                 "title": "Doritos",
                 "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
                 "price": 150,
-                "pictureUrl": "https://i.ibb.co/LpzG0HT/Producto2.jpg"
+                "pictureUrl": "https://i.ibb.co/LpzG0HT/Producto2.jpg",
+                "stock": 1
             }
         ]
     }
