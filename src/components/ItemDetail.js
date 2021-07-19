@@ -1,15 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Image, Button, Nav } from 'react-bootstrap'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext';
 
 function ItemDetail({ item }) {
 
+  const cartContext = useContext(CartContext);
   const onAdd = (cantidad) => {
-      setItemQuantity(cantidad)
+      if(cantidad <= item.stock)
+      {
+        if(!cartContext.isInCart(item))
+        {
+          cartContext.addItem({ item:item, quantity:cantidad})
+          setItemQuantity(cantidad);
+        }
+        else
+        {
+          cartContext.removeItem(item)
+          alert("El item ya se encuentra en el carrito");
+        }
+      }
+      else
+      {
+        alert("No hay stock");
+      }
   }
 
   const [itemQuantity, setItemQuantity] = useState();
+
 
 
   return (
@@ -43,7 +62,7 @@ function ItemDetail({ item }) {
             :
             <div className="col-md-4">
               <Nav.Link as={Link} to={"/cart/"}>
-              <Button size="lg" className="mt-2" onClick={onAdd} variant="outline-info">Terminar Compra</Button>
+              <Button size="lg" className="mt-2" variant="outline-info">Terminar Compra</Button>
             </Nav.Link>
           </div>
           }
