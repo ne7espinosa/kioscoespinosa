@@ -15,7 +15,7 @@ function Item({item}) {
                     {item.description}, {item.price}
                 </Card.Text>
                 <Nav.Link as={Link} to={"/item/"+item.id}>
-                <Button variant="outline-primary">Detalles</Button>
+                <Button variant="outline-secondary">Detalles</Button>
                 </Nav.Link>
               
             </Card.Body>

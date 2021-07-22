@@ -17,7 +17,6 @@ function ItemDetail({ item }) {
         }
         else
         {
-          cartContext.removeItem(item)
           alert("El item ya se encuentra en el carrito");
         }
       }
