@@ -37,7 +37,7 @@ function Cart() {
                 <div flex="true" className="inlineBlock" style={{ marginTop: '50px', height: 400, width: '100%', backgroundColor: 'white' }}>
                     <DataGrid getRowId={(r) => r.item.id} rows={cartContext.cartItems} columns={columns} pageSize={20} />
                     <Alert variant="dark">
-                    Total : 
+                    Total: $ 
                     {cartContext.cartItems.reduce((elem1, elem2) => {
                             return elem1 + (parseInt(elem2.item.price) * elem2.quantity)
                         }, 0)

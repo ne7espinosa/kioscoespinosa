@@ -24,8 +24,8 @@ function App() {
   }
 
   const removeItem = (id) => {
-    const listaNueva = cartItems.filter((element) => 
-    element.item.id !== id);
+    const listaNueva = cartItems.filter((element) =>
+      element.item.id !== id);
     setCartItems(listaNueva);
   }
 
@@ -44,30 +44,25 @@ function App() {
   }
   return (
     <div className="App">
-      <Router>
-        <CartContext.Provider value={{ cartItems }} >
+      <CartContext.Provider value={{ cartItems, addItem, removeItem, clear, isInCart }} >
+        <Router>
           <NavBar />
-        </CartContext.Provider>
-        <Switch>
-          <Route exact path='/'>
-            <ItemListContainer />
-          </Route>
-          <Route exact path='/category/:categoryId'>
-            <ItemListContainer />
-          </Route>
-          <Route exact path='/item/:itemId'>
-            <CartContext.Provider value={{ addItem, removeItem, clear, isInCart }} >
+          <Switch>
+            <Route exact path='/'>
+              <ItemListContainer />
+            </Route>
+            <Route exact path='/category/:categoryId'>
+              <ItemListContainer />
+            </Route>
+            <Route exact path='/item/:itemId'>
               <ItemDetailContainer />
-            </CartContext.Provider>
-          </Route>
-          <Route exact path='/cart'>
-            <CartContext.Provider value={{ removeItem, cartItems }} >
+            </Route>
+            <Route exact path='/cart'>
               <Cart />
-            </CartContext.Provider>
-          </Route>
-        </Switch>
-      </Router>
-
+            </Route>
+          </Switch>
+        </Router>
+      </CartContext.Provider>
     </div>
   );
 }

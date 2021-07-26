@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
+import { getFirestore} from '../firebase'
 const useParams = require("react-router-dom").useParams;
 
 function ItemDetailContainer() {
@@ -7,31 +8,15 @@ function ItemDetailContainer() {
   const { itemId } = useParams();
 
   useEffect(() => {
-    setTimeout(function(){
-      fetch('../productos.json',
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      }
-      )
-      .then(function(response)
-      {
-        return response.json()
-      }).then(function(categoriaLista)
-      {;
-        const categoriaBuscada = categoriaLista.find(categoria => categoria.items.find(item => item.id === itemId));
-        const item = categoriaBuscada.items.find(item => item.id === itemId);
-        
-      if(item)
-        {
-          setItemDetail(item);
-        }
-      })
-
-    }, 2000)
-  }, [itemId]);
+    const db = getFirestore()
+    const itemList = db.collection('items').where('id','==',itemId)
+    itemList.get().then((query) => {
+      let item = query.docs.map(doc => doc.data())[0]
+      setItemDetail(item);    
+    }).catch(err => {
+      console.log('Error getting documents', err);
+    });
+}, [itemId]);
 
   return (
     <div>

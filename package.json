@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.2",
     "@material-ui/data-grid": "^4.0.0-alpha.34",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^4.6.0",
+    "firebase": "^7.2.3",
     "mdb-react-ui-kit": "^1.0.0-beta7",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",

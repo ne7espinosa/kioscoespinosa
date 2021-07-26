@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
+import { getFirestore } from '../firebase';
 
 const useParams = require("react-router-dom").useParams;
 
@@ -8,34 +9,22 @@ function ItemListContainer() {
     const { categoryId } = useParams();
     const [productos, setProductos] = useState([]);
     useEffect(() => {
-        setTimeout(function () {
-            fetch('../productos.json'
-                , {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    }
-                }
-            )
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (productosResolve) {
-                    let category = productosResolve.filter(item => item.id === categoryId)[0]
-                    if (category) {
-                        setProductos([...category.items]);
-                    }
-                    else
-                    {
-                        let allProducts = productosResolve.map(({items}) => items).flat().sort((a, b) => a.id - b.id);
-                        setProductos(allProducts);
-                    }
-                })
-        }, 2000);
-    
+        const db = getFirestore()
+        let itemCollection = db.collection('items')
 
+        if (categoryId) {
+            const itemList = itemCollection.where('categoryId', '==', categoryId)
+            itemList.get().then((query) => {
+                setProductos(query.docs.map(doc => doc.data()));
+            })
+
+        }
+        else {
+            itemCollection.get().then((query) => {
+                setProductos(query.docs.map(doc => doc.data()));
+            })
+        }
     }, [categoryId]);
-
     return (
         <div flex="true" className="container justify-content-center align-items-center h-100">
             <ItemList productos={productos} />
