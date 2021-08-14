@@ -55,27 +55,10 @@ function Cart() {
             total: cartContext.cartItems.reduce((elem1, elem2) => {
                 return elem1 + (parseInt(elem2.item.price) * elem2.quantity)
             }, 0),
-            date: dateOrder
+            date: dateNow
 
         }).then((responseInsert) => {
             setIdOrder(responseInsert.id);
-
-            // console.log(responseInsert.date);
-            // console.log(responseInsert.id);
-            // const itemRef = db.collection("items");
-            // cartContext.cartItems.map(element => {
-            //     itemRef.doc(element.item.id).update({
-            //         stock: element.item.stock - element.quantity
-            //     }).then(responseUpdate => {
-            //         cartContext.clear()
-            //         history.push("/")
-            //     }).catch(err => {
-            //         console.log('Error updating documents', err);
-            //     })
-            //     console.log(element)
-            //     return element
-            // })
-
             handleClose();
             cartContext.clear();
             setModalShow(true);
