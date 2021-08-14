@@ -35,12 +35,15 @@ export default function ItemCount({ initialStock, initial, onAdd }) {
         <Card border="light" className="mx-auto" style={{ width: '18rem' }}>
             <Card.Body>
                 <Container>
-                    <Row xs={4} className="justify-content-md-center">
-                        <Col ><Button onClick={subtractCount} variant="outline-info"> - </Button></Col>
-                        <Col className="mt-1" xs={2}>{count}</Col>
-                        <Col ><Button onClick={addCount} variant="outline-info">+</Button></Col>
+                    <Row xs="auto" className="justify-content-md-center">
+                        <Col lg="3" xs="5"><Button onClick={subtractCount} variant="outline-secondary"> - </Button></Col>
+                        <Col md="auto" xs="auto" className="mt-1" >{count}</Col>
+                        <Col lg="3" xs="5"><Button onClick={addCount} variant="outline-secondary">+</Button></Col>
                     </Row>
-                    <Button xs={4} className="mt-2" onClick={addSale} variant="outline-info">Agregar al Carrito</Button>
+                    <Col xs md lg="auto">
+                    <Button className="mt-2" onClick={addSale} variant="outline-secondary">Agregar al Carrito</Button>
+                    </Col>
+                    
                 </Container>
             </Card.Body>
         </Card>

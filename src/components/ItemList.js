@@ -8,8 +8,8 @@ function ItemList({ productos }) {
             {
             productos.map(item => {
                 return(
-                    <div className="col-md-4">
-                        <Item key={item.id} item={item} />
+                    <div className="col-md-4" key={item.id}>
+                        <Item item={item} />
                     </div>
                     )})}
         </div>

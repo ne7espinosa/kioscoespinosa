@@ -33,8 +33,8 @@ function ItemDetail({ item }) {
   return (
 
     <div className="container">
-      <div className="card border-0 shadow my-5" style={{ width: '900px', height: '550px' }}>
-        <div className="row no-gutters" style={{ marginTop: '100px' }}>
+      <div className="card border-0 shadow my-5" style={{ width: 'auto', height: '550px' }}>
+        <div className="row no-gutters" style={{ marginTop: 'auto' }}>
           <div className="col-md-4">
             <Image src={item.pictureUrl} fluid style={{ height: '200px' }} />
           </div>
@@ -51,7 +51,7 @@ function ItemDetail({ item }) {
             </div>
           </div>
         </div>
-        <div className="row no-gutters" style={{ marginTop: '60px' }}>
+        <div className="row no-gutters" style={{ marginTop: 'auto', marginBottom: 'auto' }}>
           {!itemQuantity ?
             <div className="col-md-4">
               <div flex="true">
@@ -61,7 +61,7 @@ function ItemDetail({ item }) {
             :
             <div className="col-md-4">
               <Nav.Link as={Link} to={"/cart/"}>
-              <Button size="lg" className="mt-2" variant="outline-info">Terminar Compra</Button>
+              <Button size="lg" className="mt-2" variant="outline-success">Terminar Compra</Button>
             </Nav.Link>
           </div>
           }

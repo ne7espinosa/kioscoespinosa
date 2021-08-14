@@ -1,10 +1,10 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, Nav, Form, Dropdown } from 'react-bootstrap'
 import CartWidget from './CartWidget';
 import { IoCartOutline } from "react-icons/io5";
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
+import '../styles/Navbar.css';
 
 function NavBar() {
     const categoriaProductosList = [{ "id": 1, "description": "Chocolates" }, { "id": 2, "description": "Caramelos" }, { "id": 3, "description": "Snacks" }];
@@ -23,21 +23,22 @@ function NavBar() {
                         />
                     </Nav.Link>
                 </Navbar.Brand>
-                <Nav className="mr-auto">
-                    {categoriaProductosList.map((elem, index) => {
-                        return (
+                <Dropdown className="mr-auto" id="dropdowncategorias">
+                    <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
+                        Categorias
+                    </Dropdown.Toggle>
 
-                            <Nav.Link as={Link} key={index} index={index} to={"/category/" + elem.id}>
-                                {elem.description}
-                            </Nav.Link>
-
+                    <Dropdown.Menu>
+                        {categoriaProductosList.map((elem, index) => 
+                        {
+                            return (
+                                <Dropdown.Item as={Link} key={index} index={index} to={"/category/" +elem.id}>{elem.description}</Dropdown.Item>
                         )
                     })}
-                </Nav>
+                    </Dropdown.Menu>
+                </Dropdown>
                 <Form inline>
                     <CartWidget icono={<IoCartOutline color={"white"} size={28} />} />
-                    <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
-                    <Button variant="outline-info">Buscar</Button>
                 </Form>
             </Navbar>
         </>
